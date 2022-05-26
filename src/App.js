@@ -1,6 +1,7 @@
 import "./App.css";
 import Home from "./pages/Home";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import ImageCropper from "./components/ImageCropper";
 
 const theme = createTheme({
   palette: {
@@ -12,8 +13,8 @@ const theme = createTheme({
       contrastText: "#57EBDE",
     },
   },
-  input: {
-    color: "#fff",
+  myColor: {
+    color: "red",
   },
 });
 

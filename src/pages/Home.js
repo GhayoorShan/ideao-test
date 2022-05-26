@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Button, Grid } from "@mui/material";
-import { Box } from "@mui/system";
+
 import design from "../design.svg";
 import Form from "../components/Form";
 
@@ -9,23 +9,23 @@ const Home = () => {
     <>
       <Grid
         container
+        pl={{ xs: 5, md: 10 }}
         sx={{
-          py: 5,
-          px: 10,
+          pt: 3,
           //   maxWidth: "lg",
           display: "flex",
           margin: "auto",
-          maxHeight: "1024px",
+          // maxHeight: "1024px",
           background: "#242424",
           color: "rgb(255, 255, 255)",
         }}
       >
-        <Grid align="right" sm={12} item>
+        <Grid align="right" mr={10} sm={12} item>
           <Button
             color="neutral"
             sx={{
               color: "#57EBDE",
-              borderColor: "#57EBDE",
+
               borderRadius: "0",
             }}
             variant="outlined"
@@ -33,20 +33,20 @@ const Home = () => {
             Connect Metamask
           </Button>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={5} pb={5}>
           <Form />
         </Grid>
         <Grid
           height="auto"
           item
           xs={12}
-          sm={6}
+          sm={7}
           sx={{
-            position: "relative",
+            // position: "relative",
             backgroundImage: `url(${design})`,
-            backgroundSize: "contain",
+            backgroundSize: "120%",
+            backgroundPosition: "-30% -110%",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "",
           }}
         >
           {/* <Box
