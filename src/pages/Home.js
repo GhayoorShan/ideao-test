@@ -1,12 +1,12 @@
 import React from "react";
-import { Typography, Button, Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 
-import design from "../design.svg";
-import Form from "../components/Form";
+import design from "../assets/design.svg";
+import Form from "../components/AddUser";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <Grid
         container
         pl={{ xs: 5, md: 10 }}
@@ -50,19 +50,19 @@ const Home = () => {
           }}
         >
           {/* <Box
-            component="img"
-            backgroundImage={logo}
-            height="100px"
-            // src={logo}
-            // sx={{
-            //   position: "absolute",
-            //   bottom: "-150px",
-            //   right: "-130px",
-            // }}
-          ></Box> */}
+        component="img"
+        backgroundImage={logo}
+        height="100px"
+        // src={logo}
+        // sx={{
+        //   position: "absolute",
+        //   bottom: "-150px",
+        //   right: "-130px",
+        // }}
+      ></Box> */}
         </Grid>
       </Grid>
-    </>
+    </div>
   );
 };
 

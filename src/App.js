@@ -1,8 +1,10 @@
 import "./App.css";
 import Home from "./pages/Home";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import ImageCropper from "./components/ImageCropper";
-
+import { useRoutes, BrowserRouter as Router } from "react-router-dom";
+import ListMembers from "./pages/ListMembers";
+import React from "react";
+import axios from "axios";
 const theme = createTheme({
   palette: {
     primary: {
@@ -17,12 +19,21 @@ const theme = createTheme({
     color: "red",
   },
 });
+function AppRoutes() {
+  const routes = useRoutes([
+    { path: "/", element: <Home /> },
+    { path: "/members", element: <ListMembers /> },
+  ]);
+  return routes;
+}
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <AppRoutes />
+      </ThemeProvider>
+    </Router>
   );
 }
 

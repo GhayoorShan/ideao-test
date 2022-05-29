@@ -1,15 +1,6 @@
-/* body {
-  background-color: #00000000;
-  overflow-x: hidden;
+body {
+  background-color: #141414;
 }
-
-.connect {
-  background: linear-gradient(
-    135deg,
-    hsla(82, 96%, 57%, 1) 0%,
-    hsla(175, 79%, 63%, 1) 100%
-  );
-} */
 
 .MuiOutlinedInput-root:focus-within {
   border: 0.5px solid transparent;
@@ -18,4 +9,14 @@
   background-origin: border-box;
   background-clip: content-box, border-box;
   border-radius: 0px;
+}
+
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root {
+  font-size: 16px !important;
+  color: #969696 !important;
+  margin-top: 5px !important;
+}
+
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  color: #ffffff !important;
 }

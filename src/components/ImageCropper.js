@@ -5,7 +5,6 @@ import {
   Grid,
   Dialog,
   Box,
-  TextField,
   Typography,
   Button,
   FormLabel,
@@ -13,7 +12,7 @@ import {
 import PublishIcon from "@mui/icons-material/Publish";
 import CloseIcon from "@mui/icons-material/Close";
 
-const ImageCropper = () => {
+const ImageCropper = ({ onPicSet }) => {
   const [src, setSrc] = useState(null);
   const [crop, setCrop] = useState({ aspect: 1 / 1 });
   const [image, setImage] = useState(null);
@@ -27,11 +26,6 @@ const ImageCropper = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
-  console.log("src", src);
-  console.log("crop", crop);
-  console.log("image", image);
-  console.log("output", output);
 
   const handleFileChange = (e) => {
     let image = e.target.files[0];
@@ -74,6 +68,7 @@ const ImageCropper = () => {
     // Converting to base64
     const base64Image = canvas.toDataURL("image/jpeg");
     setOutput(base64Image);
+    onPicSet(base64Image);
     handleClose();
   };
 
@@ -134,7 +129,7 @@ const ImageCropper = () => {
         <PublishIcon fontSize="small" /> Upload photo
         <input type="file" hidden accept="image/*" />
       </Button>
-      <div>{output && <img src={output} alt="" />}</div>
+      {/* <div>{output && <img src={output} alt="" />}</div> */}
     </>
   );
 };
