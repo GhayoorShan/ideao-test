@@ -5,6 +5,7 @@ import { useRoutes, BrowserRouter as Router } from "react-router-dom";
 import ListMembers from "./pages/ListMembers";
 import React from "react";
 import axios from "axios";
+import WalletCard from "./components/WalletCard";
 const theme = createTheme({
   palette: {
     primary: {

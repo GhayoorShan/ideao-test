@@ -71,35 +71,7 @@ const ListMembers = () => {
     dispatch(deleteUser(id));
   };
 
-  // const users = [
-  //   {
-  //     id: "2",
-  //     imageSrc:
-  //       "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80",
-  //     fullName: "Bilal",
-  //     email: "bilal@gmail.com",
-  //     company: "MB",
-  //     website: "mb.com",
-  //   },
-  //   {
-  //     id: "1",
-  //     imageSrc:
-  //       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-  //     fullName: "Regina",
-  //     email: "regina@gmail.com",
-  //     company: "HRC",
-  //     website: "hrc.com",
-  //   },
-  //   {
-  //     id: "3",
-  //     imageSrc:
-  //       "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80",
-  //     fullName: "Azhar",
-  //     email: "azhar@gmail.com",
-  //     company: "TMC",
-  //     website: "tmc.com",
-  //   },
-  // ];
+  const handleEdit = (id) => {};
 
   return (
     <Grid
@@ -185,29 +157,29 @@ const ListMembers = () => {
             </TableBody>
           ) : (
             <TableBody>
-              {users.map((users) => (
-                <StyledTableRow key={users.id}>
+              {users.map((user) => (
+                <StyledTableRow key={user.id}>
                   <StyledTableCell component="th" scope="users" align="center">
-                    {users.id}
+                    {user.id}
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Avatar alt={users.fullName} src={users.imageSrc} />
+                    <Avatar alt={user.fullName} src={user.imageSrc} />
                   </StyledTableCell>
-                  <StyledTableCell>{users.fullName}</StyledTableCell>
-                  <StyledTableCell>{users.email}</StyledTableCell>
-                  <StyledTableCell>{users.company}</StyledTableCell>
-                  <StyledTableCell>{users.website}</StyledTableCell>
+                  <StyledTableCell>{user.fullName}</StyledTableCell>
+                  <StyledTableCell>{user.email}</StyledTableCell>
+                  <StyledTableCell>{user.company}</StyledTableCell>
+                  <StyledTableCell>{user.website}</StyledTableCell>
                   <StyledTableCell>
                     <ButtonGroup variant="text" aria-label="text button group">
                       <Button
                         sx={{ color: "#969696" }}
-                        onClick={() => navigate(`/`)}
+                        onClick={() => handleEdit(user.id)}
                       >
                         <EditIcon />
                       </Button>
                       <Button
                         sx={{ color: "#969696" }}
-                        onClick={() => handleDelete(users.id)}
+                        onClick={() => handleDelete(user.id)}
                       >
                         <DeleteIcon />
                       </Button>

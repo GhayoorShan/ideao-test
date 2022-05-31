@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import design from "../assets/design.svg";
 import Form from "../components/AddUser";
+import WalletCard from "../components/WalletCard";
 
 const Home = () => {
   return (
@@ -21,17 +22,7 @@ const Home = () => {
         }}
       >
         <Grid align="right" mr={10} sm={12} item>
-          <Button
-            color="neutral"
-            sx={{
-              color: "#57EBDE",
-
-              borderRadius: "0",
-            }}
-            variant="outlined"
-          >
-            Connect Metamask
-          </Button>
+          <WalletCard />
         </Grid>
         <Grid item xs={12} sm={5} pb={5}>
           <Form />
@@ -42,25 +33,12 @@ const Home = () => {
           xs={12}
           sm={7}
           sx={{
-            // position: "relative",
             backgroundImage: `url(${design})`,
             backgroundSize: "120%",
             backgroundPosition: "-30% -110%",
             backgroundRepeat: "no-repeat",
           }}
-        >
-          {/* <Box
-        component="img"
-        backgroundImage={logo}
-        height="100px"
-        // src={logo}
-        // sx={{
-        //   position: "absolute",
-        //   bottom: "-150px",
-        //   right: "-130px",
-        // }}
-      ></Box> */}
-        </Grid>
+        ></Grid>
       </Grid>
     </div>
   );

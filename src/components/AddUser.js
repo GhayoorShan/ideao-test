@@ -4,26 +4,11 @@ import axios from "axios";
 import { Grid, TextField, Typography, Button, FormLabel } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import ImageCropper from "./ImageCropper";
-import { useDispatch } from "react-redux";
-import { addUser } from "./../redux/action";
-import { ActionTypes } from "@mui/base";
-import { ADD_USER } from "./../redux/actionType";
-
-// const initialFValues = {
-//   fullName: "",
-//   email: "",
-//   company: "",
-//   website: "",
-// };
 
 const Form = () => {
   const [values, setValues] = useState({});
 
   const navigate = useNavigate();
-
-  // const { fullName, email, company, website } = values;
-
-  let dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -48,7 +33,7 @@ const Form = () => {
     let company = values.company;
     let website = values.website;
     let imageSrc = values.picture;
-    //values.type = ActionTypes.ADD_USER;
+
     let user = {
       fullName: fullName,
       email: email,
@@ -79,8 +64,6 @@ const Form = () => {
             .then((res) => {
               console.log("Response", res);
               navigate("/members");
-              // dispatch(userAdded());
-              //dispatch(loadUsers());
             })
             // eslint-disable-next-line no-unused-expressions
             .catch((error) => console.log(error));
@@ -89,8 +72,6 @@ const Form = () => {
           console.log("err " + err);
         });
     }
-
-    //  console.log(values);
   };
 
   const CssTextField = styled(TextField)({
@@ -149,8 +130,6 @@ const Form = () => {
             id="email"
             name="email"
             type="email"
-            //   defaultValue={values.email}
-            //defaultValue={email}
             placeholder="Your email address here"
             onChange={handleInputChange}
           />
@@ -162,8 +141,6 @@ const Form = () => {
             id="company"
             name="company"
             type="text"
-            // defaultValue={values.company}
-            //defaultValue={company}
             placeholder="Your company"
             onChange={handleInputChange}
           />
@@ -175,8 +152,6 @@ const Form = () => {
             id="website"
             name="website"
             type="text"
-            //defaultValue={website}
-            //defaultValue={values.website}
             placeholder="Your company website url"
             onChange={handleInputChange}
           />
@@ -196,7 +171,6 @@ const Form = () => {
           >
             Submit
           </Button>
-          {/* <button onSubmit={handleOnSubmit}>Submit</button> */}
         </form>
       </Grid>
     </>
